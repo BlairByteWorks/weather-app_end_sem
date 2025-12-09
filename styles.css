@@ -1,139 +1,132 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* The Purple Gradient Background */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-}
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Visual upgrade: Gradient Background */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-.weather-app {
-    max-width: 400px;
-    margin: 20px auto; 
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border-radius: 8px;
-    background: #f6f6f6;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        .weather-app {
+            max-width: 400px;
+            margin: 20px auto; 
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-radius: 8px;
+            background: #f6f6f6;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95); /* Bright white card */
+            width: 100%; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Big, soft shadow */
+            border-radius: 16px; /* Smooth corners */
+        }
 
-    background: rgba(255, 255, 255, 0.95); /* Bright white card */
-    width: 100%; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Big, soft shadow */
-    border-radius: 16px; /* Smooth corners */
-}
+        .search-section {
+            display: flex;
+            gap: 10px;
+        }
 
-.search-section {
-    display: flex;
-    gap: 10px;
-}
+        .hidden {
+            display: none !important;
+        }
 
-/* Styled Inputs */
-input {
-    flex-grow: 1;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-input:focus {
-    border-color: #764ba2; /* Purple focus border */
-}
+        .error {
+            color: #721c24;
+            background-color: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #f5c6cb;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
 
-/* Styled Button */
-button {
-    padding: 12px 24px;
-    background: #764ba2; /* Purple button */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-}
-button:hover {
-    background: #5b3a7d; /* Darker purple on hover */
-}
+        input {
+            flex-grow: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #764ba2;
+        }
 
-.hidden {
-    display: none !important;
-}
+        button {
+            padding: 12px 24px;
+            background: #764ba2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #5b3a7d;
+        }
 
-.error {
-    color: #721c24;
-    background-color: #f8d7da;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #f5c6cb;
-}
+        #weatherResult {
+            text-align: center;
+            padding: 10px;
+            animation: fadeIn 0.5s ease-in;
+        }
 
-h2 {
-    text-align: center;
-    color: #333;
-    margin-top: 0;
-    font-size: 1.8rem;
-}
+        #cityName {
+            font-size: 2rem;
+            color: #333;
+            margin: 10px 0;
+            text-transform: capitalize;
+        }
 
-#weatherResult {
-    text-align: center;
-    padding: 10px;
-    animation: fadeIn 0.5s ease-in;
-}
+        #temp {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #764ba2;
+        }
 
-#cityName {
-    font-size: 2rem;
-    color: #333;
-    margin: 10px 0;
-    text-transform: capitalize;
-}
+        .unit {
+            font-size: 1.5rem;
+            color: #888;
+            vertical-align: top;
+            margin-top: 10px;
+            display: inline-block;
+        }
 
-#temp {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #764ba2; /* Purple text for temp */
-}
+        #icon {
+            width: 100px;
+            height: 100px;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+        }
 
-.unit {
-    font-size: 1.5rem;
-    color: #888;
-    vertical-align: top;
-    margin-top: 10px;
-    display: inline-block;
-}
+        #loading {
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 
-#icon {
-    width: 100px;
-    height: 100px;
-    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-#loading {
-    text-align: center;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-/* Animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 600px) {
-    .weather-app { padding: 15px; }
-    .search-section { flex-direction: column; }
-    button { width: 100%; }
-
-}
-
-
+        @media (max-width: 600px) {
+            .weather-app { padding: 15px; }
+            .search-section { flex-direction: column; }
+            button { width: 100%; }
+        }
