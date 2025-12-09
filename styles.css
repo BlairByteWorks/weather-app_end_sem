@@ -12,9 +12,7 @@ body {
     box-sizing: border-box;
 }
 
-/* --- 2. REQUIRED COMPONENT (Strict Exam Compliance) --- */
 .weather-app {
-    /* These match the exam requirements exactly */
     max-width: 400px;
     margin: 20px auto; 
     padding: 20px;
@@ -25,7 +23,6 @@ body {
     background: #f6f6f6;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 
-    /* EXTENSIONS: Overriding slightly to make it look modern */
     background: rgba(255, 255, 255, 0.95); /* Bright white card */
     width: 100%; 
     box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Big, soft shadow */
@@ -139,4 +136,5 @@ h2 {
     .weather-app { padding: 15px; }
     .search-section { flex-direction: column; }
     button { width: 100%; }
+
 }
